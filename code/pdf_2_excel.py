@@ -234,7 +234,7 @@ def all_branches_dataframe(nested_vendors_list: list) -> pd.DataFrame:
 
 def main():
     # Assume that the document is in Google Drive
-    doc = Document("/content/drive/MyDrive/Upwork/BMF-Handbook-2022-Fullbook (1).docx")
+    doc = Document("/content/drive/MyDrive/Upwork/pdf_2_excel/BMF-Handbook-2022-Fullbook (1).docx")
 
     runs = list(chain.from_iterable(list(p.runs) for p in doc.paragraphs))
 
@@ -267,7 +267,7 @@ def main():
     df_branches_all = all_branches_dataframe(nested_vendors_list)
 
     writer = pd.ExcelWriter(
-        "/content/drive/MyDrive/Upwork/BMF-Handbook-2022-Fullbook.xlsx",
+        "/content/drive/MyDrive/Upwork/pdf_2_excel/BMF-Handbook-2022-Fullbook.xlsx",
         engine="xlsxwriter",
     )
 
